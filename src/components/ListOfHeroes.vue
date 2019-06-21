@@ -1,9 +1,9 @@
 <template>
   <div class="list_of_heroes">
-    <h1>List of Heroes</h1>
+    <h1>Lista bohaterów</h1>
     <ul>
       <li v-for="hero in $store.state.heroes" v-bind:key="hero.id">
-        <h3> {{ hero.name }} </h3> {{hero.desc}}
+        <h2> {{ hero.name }} </h2> {{hero.desc}}
       </li>
     </ul>
   </div>

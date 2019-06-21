@@ -12,7 +12,7 @@
       </li>
       <li>
         <a> 
-          <router-link to="/hero/1">Edycja bohatera nr 1</router-link>
+          <router-link to="/hero/1">Edycja bohatera</router-link>
         </a>
       </li>
       <li style="float:right">
