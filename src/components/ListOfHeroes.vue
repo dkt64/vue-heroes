@@ -3,7 +3,7 @@
     <h1>List of Heroes</h1>
     <ul>
       <li v-for="hero in $store.state.heroes" v-bind:key="hero.id">
-        <h2> {{ hero.name }} </h2> {{hero.desc}}
+        <h3> {{ hero.name }} </h3> {{hero.desc}}
       </li>
     </ul>
   </div>
