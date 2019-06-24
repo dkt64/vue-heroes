@@ -2,10 +2,11 @@ import Vue from 'vue'
 import App from './App.vue'
 import Router from 'vue-router'
 import Vuex from 'vuex'
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 import RouteHeroes from './components/ListOfHeroes'
 import RouteEditHero from './components/SingleHero'
-import RouteHelp from './components/Help'
 
 Vue.config.productionTip = false
 
@@ -21,7 +22,6 @@ const routes = [
   { path: '/', component: RouteHeroes },
   { path: '/heroes', component: RouteHeroes },
   { path: '/hero/:id', component: RouteEditHero },
-  { path: '/help', component: RouteHelp }
 ]
 
 const router = new Router ({mode: 'history', routes})

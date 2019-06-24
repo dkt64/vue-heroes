@@ -1,22 +1,24 @@
 <template>
   <div class="list_of_heroes">
-    <h1>Lista bohaterów</h1>
-    <ul>
-      <li v-for="hero in $store.state.heroes" v-bind:key="hero.id">
-        <h2> {{ hero.name }} </h2> {{hero.desc}}
-      </li>
-    </ul>
+    <div class="container">
+      <div class="row">
+        <h3>Lista bohaterów</h3>
+      </div>
+      <div class="row">
+        <ul class="list-group">
+          <li class="list-group-item" v-for="hero in $store.state.heroes" v-bind:key="hero.id">
+            <h2>{{ hero.name }}</h2>
+            {{hero.desc}}
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-    
-}
+export default {};
 </script>
 
 <style>
-ul {
-  text-align: left;
-}
 </style>
