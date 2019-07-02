@@ -6,10 +6,14 @@
       </div>
       <div class="row">
         <ul class="list-group">
-          <li class="list-group-item" v-for="hero in $store.state.heroes" v-bind:key="hero.id">
+          <li class="list-group-item" v-for="(hero, id) in $store.state.heroes" v-bind:key="hero.id">
             <h2>{{ hero.name }}</h2>
             {{hero.desc}}
-            <router-link :to="{ name: 'edit_hero', params: { id: hero.id }}" class="nav-link">Edycja bohatera</router-link>
+            <router-link
+              :to="{ name: 'edit_hero', params: { id }}"
+              class="nav-link"
+            >Edycja bohatera</router-link>
+            <button type="button" class="btn btn-outline-danger btn-sm" v-on:click="Usun(id)">Usuń</button>
           </li>
         </ul>
       </div>
@@ -18,7 +22,16 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    Usun: function (numer) {
+      // eslint-disable-next-line
+      console.log('Usunięto ' + numer)
+
+      this.$store.state.heroes.splice(numer,1)
+    }
+  }
+}
 </script>
 
 <style>
