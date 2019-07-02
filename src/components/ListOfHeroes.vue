@@ -9,9 +9,7 @@
           <li class="list-group-item" v-for="hero in this.$heroes" v-bind:key="hero.id">
             <h2>{{ hero.name }} ID {{ hero.id }}</h2>
             {{hero.desc}}
-            <p>
-            <router-link to="/hero/:id" class="badge badge-primary">Edycja</router-link>
-            </p>
+            <router-link :to="{ name: 'edit_hero', params: { id: hero.id }}" class="nav-link">Edycja bohatera</router-link>
           </li>
         </ul>
       </div>

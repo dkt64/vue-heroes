@@ -12,14 +12,14 @@ Vue.config.productionTip = false
 Vue.use(Router)
 
 var heroes = [
-  { id: 1, name: "Herakles", desc: "Znany był z wielkiej siły, waleczności, męstwa, zapaśnictwa i umiejętności wojennych, zwłaszcza celnego strzelania z łuku." },
-  { id: 2, name: "Achilles", desc: "Bohater wojny trojańskiej. Iliada i Odyseja Homera oraz Cypria charakteryzują go jako największego wojownika." }
+  { id: 0, name: "Herakles", desc: "Znany był z wielkiej siły, waleczności, męstwa, zapaśnictwa i umiejętności wojennych, zwłaszcza celnego strzelania z łuku." },
+  { id: 1, name: "Achilles", desc: "Bohater wojny trojańskiej. Iliada i Odyseja Homera oraz Cypria charakteryzują go jako największego wojownika." }
 ]
 
 const routes = [
-  { path: '/', component: RouteHeroes },
-  { path: '/heroes', component: RouteHeroes },
-  { path: '/hero/:id', component: RouteEditHero}
+  { path: '/', name: "main", component: RouteHeroes },
+  { path: '/heroes', name: "list_of_heroes", component: RouteHeroes },
+  { path: '/hero/:id', name: "edit_hero", component: RouteEditHero },
 ]
 
 const router = new Router ({mode: 'history', routes})
