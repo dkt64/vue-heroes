@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import Router from 'vue-router'
+import Vuex from 'vuex'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
@@ -10,6 +11,7 @@ import RouteEditHero from './components/SingleHero'
 Vue.config.productionTip = false
 
 Vue.use(Router)
+Vue.use(Vuex)
 
 var heroes = [
   { id: 0, name: "Herakles", desc: "Znany był z wielkiej siły, waleczności, męstwa, zapaśnictwa i umiejętności wojennych, zwłaszcza celnego strzelania z łuku." },
@@ -24,8 +26,14 @@ const routes = [
 
 const router = new Router ({mode: 'history', routes})
 
+const store = new Vuex.Store({
+  state: {
+    heroes
+  }
+})
+
 new Vue({
   render: h => h(App),
-  router,
-  heroes
+  router, 
+  store
 }).$mount('#app')

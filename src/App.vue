@@ -13,7 +13,7 @@
           <router-link to="/heroes" class="nav-link">Lista bohaterów</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/hero/0" class="nav-link">Dodaj nowego bohatera</router-link>
+          <router-link to="/hero/1" class="nav-link">Edycja bohatera</router-link>
         </li>
       </ul>
     </div>
