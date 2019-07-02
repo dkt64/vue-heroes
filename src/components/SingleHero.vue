@@ -29,6 +29,12 @@ export default {
     Zapis: function () {
       this.$store.state.heroes[this.$route.params.id].name = this.nazwa
       this.$store.state.heroes[this.$route.params.id].desc = this.opis
+      // eslint-disable-next-line
+      console.log('kixx')
+    },
+    created: function () {
+      // eslint-disable-next-line
+      console.log('created')
     }
   }
 }
