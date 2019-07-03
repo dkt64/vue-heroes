@@ -4,7 +4,7 @@
       <h1>Heroes app</h1>
     </div>
     <div class="row">
-      <img alt="Vue logo" src="./assets/logo.png">
+      <img alt="Vue logo" src="./assets/logo.png" />
     </div>
 
     <div>
@@ -13,7 +13,7 @@
           <router-link to="/heroes" class="nav-link">Lista bohaterów</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/new_hero" class="nav-link">Dodaj bohatera</router-link>
+          <router-link to="/hero/new_hero" class="nav-link">Dodaj bohatera</router-link>
         </li>
       </ul>
     </div>

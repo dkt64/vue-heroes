@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 import HeroesList from './components/ListOfHeroes'
 import EditHero from './components/SingleHero'
-import NewHero from './components/NewHero'
 
 Vue.config.productionTip = false
 
@@ -22,11 +21,11 @@ var heroes = [
 const routes = [
   { path: '/', name: "main", component: HeroesList },
   { path: '/heroes', name: "list_of_heroes", component: HeroesList },
-  { path: '/new_hero', name: "new_hero", component: NewHero },
-  { path: '/hero/:id', name: "edit_hero", component: EditHero },
+  { path: '/new_hero', name: "edit_hero", component: EditHero, props: { add_new: true} },
+  { path: '/hero/:id', name: "edit_hero", component: EditHero, props: { add_new: false} },
 ]
 
-const router = new Router ({mode: 'history', routes})
+const router = new Router({ mode: 'history', routes })
 
 const store = new Vuex.Store({
   state: {
@@ -34,8 +33,11 @@ const store = new Vuex.Store({
   }
 })
 
+// eslint-disable-next-line
+console.log("App restart...");
+
 new Vue({
   render: h => h(App),
-  router, 
+  router,
   store
 }).$mount('#app')
