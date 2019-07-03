@@ -23,8 +23,8 @@ var heroes = [
 const routes = [
   { path: '/', name: "main", component: HeroesList },
   { path: '/heroes', name: "list_of_heroes", component: HeroesList },
-  { path: '/new_hero', name: "edit_hero", component: EditHero, props: { add_new: true } },
   { path: '/hero/:id', name: "edit_hero", component: EditHero, props: { add_new: false } },
+  { path: '/new_hero', name: "new_hero", component: EditHero, props: { add_new: true } },
 ]
 
 const router = new Router({ mode: 'history', routes })
