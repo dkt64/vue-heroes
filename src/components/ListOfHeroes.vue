@@ -1,9 +1,8 @@
 <template>
   <div class="list_of_heroes">
     <div class="container">
-      <div class="row">
-        <h3>Lista bohaterów</h3>
-      </div>
+      <h3>Lista bohaterów</h3>
+      <br />
       <div class="row">
         <ul class="list-group">
           <li
@@ -13,11 +12,21 @@
           >
             <h2>{{ hero.name }}</h2>
             {{hero.desc}}
-            <router-link
-              :to="{ name: 'edit_hero', params: { id }, props: { add_new: false} }"
-              class="nav-link"
-            >Edycja bohatera</router-link>
-            <button type="button" class="btn btn-outline-danger btn-sm" v-on:click="Usun(id)">Usuń</button>
+            <p />
+            <p align="left">
+              <router-link
+                :to="{ name: 'edit_hero', params: { id }, props: { add_new: false} }"
+                class="btn btn-primary"
+              >Edycja bohatera</router-link>
+            </p>
+            <p align="right">
+              <button
+                type="button"
+                style="width:100px"
+                class="btn btn-outline-danger btn-sm"
+                v-on:click="Usun(id)"
+              >Usuń</button>
+            </p>
           </li>
         </ul>
       </div>

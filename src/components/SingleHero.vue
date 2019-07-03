@@ -1,21 +1,28 @@
 <template>
   <div class="single_hero">
+
     <h3
-      v-if="this.$route.params.id != 'new_hero'"
+      v-if="this.$route.params.id == 'new_hero'"
+    >Edycja nowego bohatera</h3>
+    <h3
+      v-else
     >Edycja bohatera nr {{ $route.params.id }} {{ $store.state.heroes[$route.params.id].name }}</h3>
+
+    <br />
 
     <div class="form-group">
       <label>Nazwa bohatera</label>
-      <input class="form-control" v-model="nazwa" v-on:keyup.enter="Zapis" size="50" />
+      <input class="form-control" v-model="nazwa" v-on:keyup.enter="Zapis" />
     </div>
 
     <div class="form-group">
       <label>Opis bohatera</label>
-      <input class="form-control" v-model="opis" v-on:keyup.enter="Zapis" size="50" />
+      <input class="form-control" v-model="opis" v-on:keyup.enter="Zapis" />
     </div>
-
-    <button v-on:click="Anuluj">Anuluj</button>
-    <button v-on:click="Zapis">Zapis</button>
+    <p align="right">
+    <button type="button" style="margin-left: 20px; width:100px" class="btn btn-secondary" v-on:click="Anuluj">Anuluj</button>
+    <button type="button" style="margin-left: 20px; width:100px" class="btn btn-success" v-on:click="Zapis">Zapis</button>
+    </p>
   </div>
 </template>
 

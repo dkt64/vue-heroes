@@ -1,14 +1,12 @@
 <template>
   <div id="app" class="container">
-    <div class="row">
-      <h1>Heroes app</h1>
-    </div>
-    <div class="row">
-      <img alt="Vue logo" src="./assets/logo.png" />
-    </div>
+    <h1 align="center">Vue Heroes App</h1>
+    <center>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    </center>
 
     <div>
-      <ul class="nav">
+      <ul class="nav nav-tabs">
         <li class="nav-item">
           <router-link to="/heroes" class="nav-link">Lista bohaterów</router-link>
         </li>
@@ -17,7 +15,7 @@
         </li>
       </ul>
     </div>
-
+    <br />
     <router-view></router-view>
   </div>
 </template>
