@@ -14,7 +14,7 @@ Vue.use(Router)
 Vue.use(Vuex)
 
 var heroes = [
-  { name: "Syzyf", desc: "Król Koryntu. Bogowie bardzo go lubili, lecz on ich wykorzystywał. Gdy miarka się przebrała Dzeus ukarał go śmiercią. Syzyf jednak sprytnie wydostał się z podziemi. Żył na ziemi długi czas, lecz gdy bogowie przypomnieli sobie o nim, dostał w Hadesie najcięższą pracę: musiał wtaczać na szczyt góry wielki głaz. Lecz gdy był już blisko celu, kamień spadał na sam dół." },
+  { name: "Syzyf", desc: "Król Koryntu. Bogowie bardzo go lubili, lecz on ich wykorzystywał. Gdy miarka się przebrała Zeus ukarał go śmiercią. Syzyf jednak sprytnie wydostał się z podziemi. Żył na ziemi długi czas, lecz gdy bogowie przypomnieli sobie o nim, dostał w Hadesie najcięższą pracę: musiał wtaczać na szczyt góry wielki głaz. Lecz gdy był już blisko celu, kamień spadał na sam dół." },
   { name: "Herakles", desc: "Znany był z wielkiej siły, waleczności, męstwa, zapaśnictwa i umiejętności wojennych, zwłaszcza celnego strzelania z łuku." },
   { name: "Achilles", desc: "Bohater wojny trojańskiej. Iliada i Odyseja Homera oraz Cypria charakteryzują go jako największego wojownika." },
   { name: "Tezeusz", desc: "Był synem Ajgiasza i Ajtry. Miał zabić Minotaura. Zakochana w nim Ariadna dała mu nić, dzięki której wyszedł z labiryntu." }

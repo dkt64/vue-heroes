@@ -1,9 +1,6 @@
 <template>
   <div class="single_hero">
-
-    <h3
-      v-if="this.$route.params.id == 'new_hero'"
-    >Edycja nowego bohatera</h3>
+    <h3 v-if="this.$route.params.id == 'new_hero'">Edycja nowego bohatera</h3>
     <h3
       v-else
     >Edycja bohatera nr {{ $route.params.id }} {{ $store.state.heroes[$route.params.id].name }}</h3>
@@ -20,8 +17,18 @@
       <input class="form-control" v-model="opis" v-on:keyup.enter="Zapis" />
     </div>
     <p align="right">
-    <button type="button" style="margin-left: 20px; width:100px" class="btn btn-secondary" v-on:click="Anuluj">Anuluj</button>
-    <button type="button" style="margin-left: 20px; width:100px" class="btn btn-success" v-on:click="Zapis">Zapis</button>
+      <button
+        type="button"
+        style="margin-left: 20px; width:100px"
+        class="btn btn-secondary"
+        v-on:click="Anuluj"
+      >Anuluj</button>
+      <button
+        type="button"
+        style="margin-left: 20px; width:100px"
+        class="btn btn-success"
+        v-on:click="Zapis"
+      >Zapis</button>
     </p>
   </div>
 </template>
@@ -33,6 +40,15 @@ export default {
       nazwa: "",
       opis: ""
     };
+  },
+  created() {
+      if (this.$route.params.id == "new_hero") {
+        this.nazwa = ""
+        this.opis = ""
+      } else {
+        this.nazwa = this.$store.state.heroes[this.$route.params.id].name;
+        this.opis = this.$store.state.heroes[this.$route.params.id].desc;
+      }
   },
   methods: {
     Anuluj: function() {
@@ -51,10 +67,6 @@ export default {
       }
 
       history.back();
-    },
-    created: function() {
-      // eslint-disable-next-line
-      console.log("created");
     }
   }
 };
