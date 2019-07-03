@@ -13,7 +13,10 @@
           >
             <h2>{{ hero.name }}</h2>
             {{hero.desc}}
-            <router-link :to="{ name: 'edit_hero', params: { id }, props: { add_new: false} }" class="nav-link">Edycja bohatera</router-link>
+            <router-link
+              :to="{ name: 'edit_hero', params: { id }, props: { add_new: false} }"
+              class="nav-link"
+            >Edycja bohatera</router-link>
             <button type="button" class="btn btn-outline-danger btn-sm" v-on:click="Usun(id)">Usuń</button>
           </li>
         </ul>

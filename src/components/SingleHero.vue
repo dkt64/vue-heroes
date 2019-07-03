@@ -21,9 +21,6 @@
 
 <script>
 export default {
-  props: {
-    add_new: false
-  },
   data() {
     return {
       nazwa: "",
@@ -35,8 +32,7 @@ export default {
       history.back();
     },
     Zapis: function() {
-
-      if (this.$route.params.id == 'new_hero') {
+      if (this.$route.params.id == "new_hero") {
         this.$store.state.heroes.push({ name: this.nazwa, desc: this.opis });
         // eslint-disable-next-line
         console.log("Zapis nowego");
