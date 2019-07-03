@@ -5,8 +5,9 @@ import Vuex from 'vuex'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-import RouteHeroes from './components/ListOfHeroes'
-import RouteEditHero from './components/SingleHero'
+import HeroesList from './components/ListOfHeroes'
+import EditHero from './components/SingleHero'
+import NewHero from './components/NewHero'
 
 Vue.config.productionTip = false
 
@@ -19,9 +20,10 @@ var heroes = [
 ]
 
 const routes = [
-  { path: '/', name: "main", component: RouteHeroes },
-  { path: '/heroes', name: "list_of_heroes", component: RouteHeroes },
-  { path: '/hero/:id', name: "edit_hero", component: RouteEditHero },
+  { path: '/', name: "main", component: HeroesList },
+  { path: '/heroes', name: "list_of_heroes", component: HeroesList },
+  { path: '/new_hero', name: "new_hero", component: NewHero },
+  { path: '/hero/:id', name: "edit_hero", component: EditHero },
 ]
 
 const router = new Router ({mode: 'history', routes})

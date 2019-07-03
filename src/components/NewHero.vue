@@ -1,6 +1,6 @@
 <template>
   <div class="single_hero">
-    <h3>Edycja bohatera nr {{ $route.params.id }} {{ $store.state.heroes[$route.params.id].name }} </h3>
+    <h3>Dodanie nowego bohatera</h3>
 
     <div class="form-group">
       <label>Nazwa bohatera</label>
@@ -31,8 +31,7 @@ export default {
       history.back()
     },
     Zapis: function () {
-      this.$store.state.heroes[this.$route.params.id].name = this.nazwa
-      this.$store.state.heroes[this.$route.params.id].desc = this.opis
+      this.$store.state.heroes.push({name: this.nazwa, desc: this.opis})
       // eslint-disable-next-line
       console.log('Zapis')
 
