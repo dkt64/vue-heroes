@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Vuex from 'vuex'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import axios from 'axios'
 
 import HeroesList from './components/ListOfHeroes'
 import EditHero from './components/SingleHero'
@@ -41,5 +42,6 @@ console.log("App restart...");
 new Vue({
   render: h => h(App),
   router,
-  store
+  store,
+  axios
 }).$mount('#app')

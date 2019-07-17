@@ -2,6 +2,7 @@
   <div class="list_of_heroes">
     <div class="container">
       <h3>Lista bohaterów</h3>
+      {{dane}}
       <br />
       <div class="row">
         <ul class="list-group">
@@ -35,7 +36,24 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
+  data (){
+    return {
+    dane: null
+    };
+  },
+  created () {
+    // eslint-disable-next-line
+    console.log("Created!");
+    axios
+      .get('http://localhost:8090/api/v1/heroes')
+      .then(response => (this.dane = response.data))
+
+    // eslint-disable-next-line
+    console.log(this.dane);
+  },
   methods: {
     Usun: function(numer) {
       // eslint-disable-next-line
