@@ -2,7 +2,6 @@
   <div class="list_of_heroes">
     <div class="container">
       <h3>Lista bohaterów</h3>
-      {{dane}}
       <br />
       <div class="row">
         <ul class="list-group">
@@ -11,8 +10,8 @@
             v-for="(hero, id) in $store.state.heroes"
             v-bind:key="hero.id"
           >
-            <h2>{{ hero.name }}</h2>
-            {{hero.desc}}
+            <h2>{{ hero.Name }}</h2>
+            {{hero.Desc}}
             <p />
             <p align="left">
               <router-link
@@ -39,27 +38,19 @@
 import axios from 'axios';
 
 export default {
-  data (){
-    return {
-    dane: null
-    };
-  },
   created () {
     // eslint-disable-next-line
     console.log("Created!");
-    axios
-      .get('http://localhost:8090/api/v1/heroes')
-      .then(response => (this.dane = response.data))
-
-    // eslint-disable-next-line
-    console.log(this.dane);
+    axios.get('http://localhost:8090/api/v1/heroes')
+      .then(response => (this.$store.state.heroes = response.data))
   },
   methods: {
     Usun: function(numer) {
       // eslint-disable-next-line
       console.log("Usunięto " + numer);
 
-      this.$store.state.heroes.splice(numer, 1);
+      axios.delete('http://localhost:8090/api/v1/heroes/' + numer)
+      // this.$store.state.heroes.splice(numer, 1);
     }
   }
 };
