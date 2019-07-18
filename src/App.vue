@@ -11,7 +11,7 @@
           <router-link to="/heroes" class="nav-link">Lista bohaterów</router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/hero/new_hero" class="nav-link">Dodaj bohatera</router-link>
+          <router-link :to="{ name: 'new_hero' }" class="nav-link">Dodaj bohatera</router-link>
         </li>
       </ul>
     </div>

@@ -3,28 +3,30 @@
     <div class="container">
       <h3>Lista bohaterów</h3>
       <br />
+      {{$store.state.heroes}}
+      {{$store.state.hero}}
       <div class="row">
         <ul class="list-group">
           <li
             class="list-group-item"
-            v-for="(hero, id) in $store.state.heroes"
-            v-bind:key="hero.id"
+            v-for="hero in $store.state.heroes"
+            v-bind:key="hero.ID"
           >
             <h2>{{ hero.Name }}</h2>
-            {{hero.Desc}}
+            {{hero.Desc}} {{hero.ID}}
             <p />
             <p align="left">
               <router-link
-                :to="{ name: 'edit_hero', params: { id }, props: { add_new: false} }"
+                :to="{ name: 'edit_hero', params: {id: hero.ID} }"
                 class="btn btn-primary"
               >Edycja bohatera</router-link>
             </p>
             <p align="right">
               <button
                 type="button"
-                style="width:100px"
+                style="width:100px" 
                 class="btn btn-outline-danger btn-sm"
-                v-on:click="Usun(id)"
+                v-on:click="Usun(hero.ID)"
               >Usuń</button>
             </p>
           </li>
@@ -40,10 +42,13 @@ import axios from 'axios';
 export default {
   created () {
     // eslint-disable-next-line
-    console.log("Created!");
+    console.log("Created ListOfHeroes ");
     axios.get('http://localhost:8090/api/v1/heroes')
       .then(response => (this.$store.state.heroes = response.data))
-  },
+
+    // eslint-disable-next-line
+    console.log(this.$store.state.heroes);
+},
   methods: {
     Usun: function(numer) {
       // eslint-disable-next-line
