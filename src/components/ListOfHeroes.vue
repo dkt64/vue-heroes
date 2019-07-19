@@ -3,8 +3,6 @@
     <div class="container">
       <h3>Lista bohaterów</h3>
       <br />
-      {{$store.state.heroes}}
-      {{$store.state.hero}}
       <div class="row">
         <ul class="list-group">
           <li
@@ -13,7 +11,7 @@
             v-bind:key="hero.ID"
           >
             <h2>{{ hero.Name }}</h2>
-            {{hero.Desc}} {{hero.ID}}
+            {{hero.Desc}}
             <p />
             <p align="left">
               <router-link
@@ -55,6 +53,9 @@ export default {
       console.log("Usunięto " + numer);
 
       axios.delete('http://localhost:8090/api/v1/heroes/' + numer)
+      axios.get('http://localhost:8090/api/v1/heroes')
+        .then(response => (this.$store.state.heroes = response.data))
+      
       // this.$store.state.heroes.splice(numer, 1);
     }
   }
